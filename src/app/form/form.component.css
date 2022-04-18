@@ -10,3 +10,15 @@ h1{
 .button{
     margin-left:7px;
 }
+#containerEl{
+    margin-top:14%;
+}
+.buttonEl{
+    margin-left:15px;
+   
+}
+.svg{
+    border:none;
+    color:rgb(35, 126, 254);
+    background-color: transparent;
+}
