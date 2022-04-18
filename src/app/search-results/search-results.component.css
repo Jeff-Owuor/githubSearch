@@ -5,3 +5,15 @@
 a{
     text-decoration: none;
 }
+h2{
+    color:rgb(18, 3, 38);
+}
+
+.column{
+    color:rgb(35, 126, 254);
+    margin-top:7px;
+    
+}
+.repositoryDetail{
+    color:rgb(18, 3, 38);
+    }

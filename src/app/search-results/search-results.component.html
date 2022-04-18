@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-4 ml-4 text-center column">
             <p>{{consumer.login}}</p>
             <img src={{githubSearchService.consumer.avatar_url}} class="image">
             <p>{{consumer.bio}}</p>
@@ -8,9 +8,9 @@
             <p>Number of public repos:{{consumer.public_repos}}</p>
             <a href={{consumer.html_url}}>Visit profile</a>
         </div>
-       <div class="col-md-8">
+       <div class="col-8 repositoryDetail">
             <div *ngFor="let repositoryDetail of repositoryDetails">
-                <p> {{repositoryDetail.name}}</p>
+                <h2> {{repositoryDetail.name}}</h2>
                 <p>{{repositoryDetail.clone_url}}</p>
                 <p>{{repositoryDetail.language}}</p>
             </div>

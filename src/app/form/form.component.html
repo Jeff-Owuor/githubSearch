@@ -4,7 +4,7 @@
     <div>
         <form (ngSubmit)="submituserName()" #form="ngForm" name="form"> 
             <input type="text"  id="username" [(ngModel)]="Username" name="Username"  placeholder="Please enter your github username">
-            <button type="submit" class="btn btn-active btn-block" (click)="showInputField()">Submit</button>
+            <button type="submit" class="btn btn-danger button" (click)="showInputField()">Submit</button>
           </form>
     </div>
     
