@@ -1,2 +1,9 @@
-{{consumer.login}}
+<div class="container-fluid">
+    <div class="row">
+       <p>@{{consumer.login}}</p>
+       <img src={{githubSearchService.consumer.avatar_url}} class="image">
+       <p>{{consumer.bio}}</p>
+       <p>Number of public repos:{{consumer.public_repos}}</p>
+    </div>
+</div>
 <button class="btn btn-primary" (click)="getBack()">Get back</button>
