@@ -22,26 +22,26 @@ export class GithubSearchService {
 
     interface apiResponse{
       bio:string,
-      publicRepos:number,
+      public_repos:number,
       login:string,
-      avatarUrl:string,
-      createdAt:Date,
-      updatedAt:Date,
+      avatar_url:string,
+      created_at:Date,
+      updated_at:Date,
       name:string, 
-      fullName:string,
-      htmlUrl:string
+      full_name:string,
+      html_url:string
     }
     let thePromise = new Promise<void>((resolve,reject)=>{
       this.http.get<apiResponse>("https://api.github.com/users/"+userName)
       .toPromise()
       .then((response:any) => {
        this.consumer.bio = response.bio;
-       this.consumer.publicRepos= response.publicRepos;
+       this.consumer.public_repos= response.public_repos;
        this.consumer.login = response.login;
-       this.consumer.avatarUrl = response.avatarUrl;
-       this.consumer.createdAt = response.createdAt;
-       this.consumer.updatedAt = response.updatedAt;
-       this.consumer.htmlUrl = response.htmlUrl;
+       this.consumer.avatar_url = response.avatar_url;
+       this.consumer.created_at = response.created_at;
+       this.consumer.updated_at = response.updated_at;
+       this.consumer.html_url = response.html_url;
        resolve();
       },
       error=>{
@@ -52,7 +52,7 @@ export class GithubSearchService {
       .toPromise()
       .then(response=>{
         for(let j=0;j<response.length;j++){
-          this.newConsumerData = new Repo(response[j].name,response[j].fullName,response[j].details,response[j].updatedAt,response[j].htmlUrl,response[j].cloneUrl,response[j].language,response[j].createdAt);
+          this.newConsumerData = new Repo(response[j].name,response[j].full_name,response[j].description,response[j].updated_at,response[j].html_url,response[j].clone_url,response[j].language,response[j].created_at);
           this.repositoryData.push(this.newConsumerData);
         }
         resolve();
