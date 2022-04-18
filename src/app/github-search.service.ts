@@ -13,8 +13,8 @@ export class GithubSearchService {
   repositoryData:any = [];
   newConsumerData:any=[];
   constructor(private http:HttpClient) { 
-    this.consumer = new User("",0,"","",new Date(),new Date(),"");
-    this.repository = new Repo("","","",new Date(),"","","",new Date());
+    this.consumer = new User("",0,"","",new Date(),"");
+    this.repository = new Repo("","","","","",new Date());
   }
 
   getConsumerData(userName:string){
@@ -40,7 +40,6 @@ export class GithubSearchService {
        this.consumer.login = response.login;
        this.consumer.avatar_url = response.avatar_url;
        this.consumer.created_at = response.created_at;
-       this.consumer.updated_at = response.updated_at;
        this.consumer.html_url = response.html_url;
        resolve();
       },
@@ -52,7 +51,7 @@ export class GithubSearchService {
       .toPromise()
       .then(response=>{
         for(let j=0;j<response.length;j++){
-          this.newConsumerData = new Repo(response[j].name,response[j].full_name,response[j].description,response[j].updated_at,response[j].html_url,response[j].clone_url,response[j].language,response[j].created_at);
+          this.newConsumerData = new Repo(response[j].name,response[j].description,response[j].html_url,response[j].clone_url,response[j].language,response[j].created_at);
           this.repositoryData.push(this.newConsumerData);
         }
         resolve();

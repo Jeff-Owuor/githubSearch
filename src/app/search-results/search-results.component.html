@@ -11,8 +11,11 @@
        <div class="col-8 repositoryDetail">
             <div *ngFor="let repositoryDetail of repositoryDetails">
                 <h2> Name:{{repositoryDetail.name}}</h2>
+                <p>Description: {{repositoryDetail.description}}</p>
                 <p>Clone repo:{{repositoryDetail.clone_url}}</p>
                 <p>Language(s) used: {{repositoryDetail.language}}</p>
+                <p>Created on {{repositoryDetail.created_at|date}}</p>
+                <p>Link:{{repositoryDetail.html_url}}</p>
             </div>
        </div>
     </div>
