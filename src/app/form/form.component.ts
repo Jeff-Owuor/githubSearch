@@ -10,6 +10,8 @@ import { User } from '../user';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  public show = false;
+  public hide = true;
   public showCaseInput = false;
   public showCaseData =true;
    consumer:User;
@@ -23,8 +25,14 @@ export class FormComponent implements OnInit {
    }
    showConsumerInput(inputHider:boolean){
       this.showCaseInput = inputHider;
-      this.showCaseData = true;
+      this.showCaseData = false;
    }
+   showInputField(){
+     
+   }
+  //  showDetails(){
+  //      this.show = !this.show;
+  //  }
   ngOnInit(): void {
   }
 

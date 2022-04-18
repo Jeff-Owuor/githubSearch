@@ -5,7 +5,10 @@
       <input type="text"  id="username" [(ngModel)]="Username" name="Username"  placeholder="Please enter your github username">
       <button type="submit" class="btn btn-active btn-block">Submit</button>
     </form>
-  <app-search-results (toggler)="showConsumerInput($event)"></app-search-results>
+    <div>
+        <app-search-results (toggler)="showConsumerInput($event)"></app-search-results>
+    </div>
+  
   </div>
   
   

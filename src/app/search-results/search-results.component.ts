@@ -25,8 +25,6 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.consumer = this.githubSearchService.consumer;
     this.repositoryDetails = this.githubSearchService.repositoryData;
-    console.log(this.consumer)
-    console.log(this.repositoryDetails)
   }
 
 }
