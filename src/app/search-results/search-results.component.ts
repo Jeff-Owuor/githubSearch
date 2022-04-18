@@ -10,7 +10,7 @@ import { User } from '../user';
 })
 export class SearchResultsComponent implements OnInit {
    consumer:User;
-   repositoryDetails = [];
+   repositoryDetails:any = [];
    githubSearchService:GithubSearchService;
    inputHider:boolean;
   constructor(githubSearchService:GithubSearchService) { 
@@ -25,6 +25,8 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.consumer = this.githubSearchService.consumer;
     this.repositoryDetails = this.githubSearchService.repositoryData;
+    console.log(this.consumer)
+    console.log(this.repositoryDetails)
   }
 
 }

@@ -1,9 +1,19 @@
 <div class="container-fluid">
     <div class="row">
-       <p>@{{consumer.login}}</p>
-       <img src={{githubSearchService.consumer.avatar_url}} class="image">
-       <p>{{consumer.bio}}</p>
-       <p>Number of public repos{{consumer.public_repos}}</p>
+        <div class="col-md-4">
+            <p>{{consumer.login}}</p>
+            <img src={{githubSearchService.consumer.avatar_url}} class="image">
+            <p>{{consumer.bio}}</p>
+            <p>Created on {{consumer.created_at|date}}</p>
+            <p>Number of public repos:{{consumer.public_repos}}</p>
+            <a href={{consumer.html_url}}>Visit profile</a>
+        </div>
+       <div class="col-md-8">
+            <div *ngFor="let repositoryDetail of repositoryDetails">
+                <p> {{repositoryDetail.name}}</p>
+                <p>{{repositoryDetail.clone_url}}</p>
+                <p>{{repositoryDetail.language}}</p>
+            </div>
+       </div>
     </div>
 </div>
-<button class="btn btn-primary" (click)="getBack()">Get back</button>

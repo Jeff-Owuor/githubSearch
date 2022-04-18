@@ -28,7 +28,12 @@ export class FormComponent implements OnInit {
       this.showCaseData = false;
    }
    showInputField(){
-     
+     this.show=true;
+     this.hide=false;
+   }
+   getBack(){
+        this.show=false;
+        this.hide=true;
    }
   //  showDetails(){
   //      this.show = !this.show;

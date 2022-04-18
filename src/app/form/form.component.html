@@ -1,11 +1,15 @@
 
-<div>
+<div class="d-flex flex-column justify-content-center align-items-center">
     <h1>Github Search</h1>
-    <form (ngSubmit)="submituserName()" #form="ngForm" name="form"> 
-      <input type="text"  id="username" [(ngModel)]="Username" name="Username"  placeholder="Please enter your github username">
-      <button type="submit" class="btn btn-active btn-block">Submit</button>
-    </form>
     <div>
+        <form (ngSubmit)="submituserName()" #form="ngForm" name="form"> 
+            <input type="text"  id="username" [(ngModel)]="Username" name="Username"  placeholder="Please enter your github username">
+            <button type="submit" class="btn btn-active btn-block" (click)="showInputField()">Submit</button>
+          </form>
+    </div>
+    
+    <div *ngIf="show">
+        <button class="btn btn-primary" (click)="getBack()">Get back</button>
         <app-search-results (toggler)="showConsumerInput($event)"></app-search-results>
     </div>
   
