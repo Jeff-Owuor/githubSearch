@@ -10,8 +10,8 @@ import { Repo } from './repo';
 export class GithubSearchService {
   consumer!:User;
   repository!:Repo;
-  repositoryData = [];
-  newConsumerData:any =[];
+  repositoryData:any = [];
+  newConsumerData:any=[];
   constructor(private http:HttpClient) { 
     this.consumer = new User("",0,"","",new Date(),new Date(),"");
     this.repository = new Repo("","","",new Date(),"","","",new Date());
@@ -38,9 +38,26 @@ export class GithubSearchService {
        this.consumer.bio = response.bio;
        this.consumer.publicRepos= response.publicRepos;
        this.consumer.login = response.login;
+       this.consumer.avatarUrl = response.avatarUrl;
+       this.consumer.createdAt = response.createdAt;
+       this.consumer.updatedAt = response.updatedAt;
+       this.consumer.htmlUrl = response.htmlUrl;
        resolve();
       },
       error=>{
+        reject(error);
+      }
+      )
+      this.http.get<any>("https://api.github.com/users/"+userName+ "/repos" )
+      .toPromise()
+      .then(response=>{
+        for(let j=0;j<response.length;j++){
+          this.newConsumerData = new Repo(response[j].name,response[j].fullName,response[j].details,response[j].updatedAt,response[j].htmlUrl,response[j].cloneUrl,response[j].language,response[j].createdAt);
+          this.repositoryData.push(this.newConsumerData);
+        }
+        resolve();
+      },
+      error =>{
         reject(error);
       }
       )

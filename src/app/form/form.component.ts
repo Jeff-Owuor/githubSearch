@@ -10,12 +10,20 @@ import { User } from '../user';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  public showCaseInput = false;
+  public showCaseData =true;
    consumer:User;
    Username:string;
    githubSearchService:GithubSearchService;
-  constructor() { }
+  constructor(githubSearchService:GithubSearchService) { 
+    this.githubSearchService = githubSearchService;
+  }
    submituserName(){
      this.githubSearchService.getConsumerData(this.Username);
+   }
+   showConsumerInput(inputHider:boolean){
+      this.showCaseInput = inputHider;
+      this.showCaseData = true;
    }
   ngOnInit(): void {
   }
