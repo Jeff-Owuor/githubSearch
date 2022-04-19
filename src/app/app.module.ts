@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { RepoHighlightDirective } from './repo-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    RepoHighlightDirective
   ],
   imports: [
     BrowserModule,

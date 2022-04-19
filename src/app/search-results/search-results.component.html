@@ -9,13 +9,13 @@
             <a href={{consumer.html_url}}>Visit profile</a>
         </div>
        <div class="col-8 repositoryDetail">
-            <div *ngFor="let repositoryDetail of repositoryDetails">
+            <div *ngFor="let repositoryDetail of repositoryDetails" appRepoHighlight>
                 <h2> Name:{{repositoryDetail.name}}</h2>
                 <p>Description: {{repositoryDetail.description}}</p>
-                <p>Clone repo:{{repositoryDetail.clone_url}}</p>
+                <a href={{repositoryDetail.clone_url}}>Clone repo:{{repositoryDetail.clone_url}}</a>
                 <p>Language(s) used: {{repositoryDetail.language}}</p>
                 <p>Created on {{repositoryDetail.created_at|date}}</p>
-                <p>Link:{{repositoryDetail.html_url}}</p>
+                <a href={{repositoryDetail.html_url}}>Link:{{repositoryDetail.html_url}}</a>
             </div>
        </div>
     </div>
