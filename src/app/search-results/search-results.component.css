@@ -9,12 +9,19 @@ a{
 h2{
     color:rgb(18, 3, 38);
 }
-
+.containing{
+    position:relative;
+    width:800px;
+}
 .column{
     color:rgb(35, 126, 254);
     margin-top:7px;
-    
+    position:fixed;
+    left:0;
 }
 .repositoryDetail{
     color:rgb(18, 3, 38);
-    }
+   position:absolute;
+   right:0;
+   width:60%;
+}
