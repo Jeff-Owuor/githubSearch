@@ -23,3 +23,15 @@ h1{
     background-color: transparent;
     margin-left:3%;
 }
+nav{
+    text-align: right;
+    font-size:20px;
+}
+a{
+    text-decoration:none;
+    color:rgb(18, 3, 38);
+}
+.about{
+    margin-left:3px;
+    margin-right:6px;
+}
